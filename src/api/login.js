@@ -47,3 +47,29 @@ export function getUserInfo(token) {
   })
 }
 
+// 订单初始化
+export function orderInit() {
+  return request({
+    url: '/pcagentapi/order/data',
+    method: 'post'
+  })
+}
+
+// 订单提交
+export function orderSubmit(data) {
+  return request({
+    url: '/pcagentapi/order/submit',
+    method: 'post',
+    data
+  })
+}
+
+// 发送给客户
+export function sendsms(data) {
+  return request({
+    url: '/pcagentapi/order/sendsms',
+    method: 'post',
+    data
+  })
+}
+

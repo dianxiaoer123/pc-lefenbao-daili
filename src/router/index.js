@@ -21,6 +21,18 @@ export const constantRouterMap = [
       path: 'dashboard',
       component: () => import('@/views/dashboard/index'),
       name: 'dashboard',
+      meta: { title: '工作台', icon: 'dashboard', noCache: true }
+     
+    }]
+  },
+  {
+    path: '/noOrder',
+    component: Layout,
+    redirect: 'noOrder',
+    children: [{
+      path: '',
+      component: () => import('@/views/noOrder/index'),
+      name: 'noOrder',
       meta: { title: '未完成订单', icon: 'dashboard', noCache: true }
      
     }]

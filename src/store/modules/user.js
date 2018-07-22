@@ -1,4 +1,4 @@
-import { loginByUsername, logout, orderList, cancelOrder,appealsOrder } from '@/api/login'
+import { loginByUsername, logout, orderList, cancelOrder,appealsOrder,orderInit,orderSubmit,sendsms } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
@@ -68,6 +68,43 @@ const user = {
         })
       })
     },
+
+    // 提交订单
+    OrderSubmit({ commit }, data) {
+      return new Promise((resolve, reject) => {
+        orderSubmit(data).then(response => {
+          resolve(response.data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+
+    // 发送给客户
+    Sendsms({ commit }, data) {
+      return new Promise((resolve, reject) => {
+        sendsms(data).then(response => {
+          resolve(response.data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    
+    
+
+    // 订单初始化
+    OrderInit({ commit }, state) {
+      return new Promise((resolve, reject) => {
+        orderInit().then(response => {
+          resolve(response.data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+
+    
 
     // 删除订单
     CancelOrder({ commit }, data) {
