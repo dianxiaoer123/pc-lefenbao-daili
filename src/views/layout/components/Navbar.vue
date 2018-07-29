@@ -12,29 +12,12 @@
 
     <div class="right-menu">
     	  <div class="elAlikLi">
-    	     <span>您好，王小明</span>
+    	     <span>您好，{{pcname}}</span>
     	  </div>
-    	  
-    	  <!-- <div class="elAlikLi">
-    	     <span class="passwordIcon"  @click="dialogVisible = true"></span>
-    	  </div> -->
-    	  
+    	 
     	  <div class="elAlikLi">
     	  	<span @click="logout" class='exitIcon'></span>
     	  </div>
-    	  
-    	  <!-- <div class="elAlikLi">
-    	  		 <router-link to="/documentation">
-                  <span class='emailIcon'></span>
-                </router-link>
-    	  	
-    	  </div> -->
-    	  
-    	   <!-- <div class="elAlikLi">
-    	   	 <router-link to="/">
-             <span class='homeIcon'></span>
-          </router-link>
-    	  </div> -->
     	  
     	  <div class="clearfix"></div>
     	
@@ -100,7 +83,8 @@ export default {
        },
      
       dialogVisible: false,
-      time:''
+      time:'',
+      pcname:''
    }
 	},
 	mounted(){
@@ -109,7 +93,9 @@ export default {
 	    that.getnowTime();
 		setInterval(function(){
 			that.getnowTime();
-		},1000);
+    },1000);
+    
+     this.pcname = localStorage.getItem('pc_admin_role');
 	},
   components: {Hamburger},
   computed: {

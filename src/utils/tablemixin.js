@@ -2,6 +2,7 @@
 // import {Export} from '@/api/export'
 import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth'
+import { dateFormat } from './formatDate.js'
 export default {
   name: 'tablemixin',
   data() {
@@ -95,6 +96,26 @@ export default {
           if(data.code == 200){
             this.tableData = data.data.dataList;
             this.totalPage = data.data.total;
+            this.tableData.map(function(value, index, array) {
+              if(value.createTime){
+                var t = new Date(value.createTime);
+                 value.createTime=dateFormat(t);
+              }
+
+              if(value.orderTime){
+                var t = new Date(value.orderTime);
+                 value.orderTime=dateFormat(t);
+              }
+
+              if(value.withDrawTime){
+                var t = new Date(value.withDrawTime);
+                 value.withDrawTime=dateFormat(t);
+              }
+
+              
+              return value;
+             
+          });
           }
         
        })

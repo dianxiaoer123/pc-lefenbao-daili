@@ -7,6 +7,12 @@ export function loginByUsername(data) {
     data
   })
 }
+export function getUserInfotation() {
+  return request({
+      url: '/pcagentapi/account/info',
+      method: 'post'
+  })
+}
 
 export function orderList(data) {
   return request({

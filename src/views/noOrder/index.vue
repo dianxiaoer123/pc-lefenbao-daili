@@ -81,7 +81,7 @@
       label="操作" width='200'>
       
        <template slot-scope="scope">
-         <el-button
+         <!-- <el-button
           size="mini"
           type="primary"
           v-if='scope.row.appealsStatus == -1'
@@ -90,7 +90,7 @@
           size="mini"
           type="primary"
           v-if='scope.row.appealsStatus == 1'
-          @click="sendVisile = true">申诉处理中</el-button>
+          @click="sendVisile = true">申诉处理中</el-button> -->
         <el-button
           size="mini"
           type="danger"

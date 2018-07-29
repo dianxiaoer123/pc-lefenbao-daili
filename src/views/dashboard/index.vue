@@ -135,7 +135,7 @@ export default {
         orderId:'',
         phone:''
       },
-      orderVisile:true,
+      orderVisile:false,
       fileList:[],
       orderForm:'',
       orderList:{
@@ -166,7 +166,7 @@ export default {
        settleBankId:[{ required: true, message: '请选择缴费银行', trigger: 'change' }],
        settleIdCardNo:[{ required: true, message: '请输入缴费身份证号', trigger: 'change' }],
        settleBankAccount:[{ required: true, message: '请输入缴费账号', trigger: 'change' }],
-       picId:[{ required: true, message: '请上传图片', trigger: 'change' }],
+      //  picId:[{ required: true, message: '请上传图片', trigger: 'change' }],
      }, 
      mobilerules:{
        phone:[{ required: true, message: '请输入手机号码', trigger: 'change' }],

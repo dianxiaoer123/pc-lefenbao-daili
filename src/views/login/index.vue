@@ -86,6 +86,7 @@ export default {
             this.loading = false;
             console.log(data);
             if(data.code == 200){
+               localStorage.setItem('pc_admin_role',data.data.name);
             	 that.$router.push({ path: '/' });
             }else{
             	that.loginTips = data.msg;

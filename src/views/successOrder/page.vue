@@ -91,10 +91,10 @@
           type="primary"
           v-if='scope.row.appealsStatus == 1'
           @click="sendVisile = true">申诉处理中</el-button>
-        <el-button
+        <!-- <el-button
           size="mini"
           type="danger"
-          @click="cancel(scope.row.orderId)">取消</el-button>
+          @click="cancel(scope.row.orderId)">取消</el-button> -->
       </template>
     </el-table-column>
   </el-table>
